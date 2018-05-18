@@ -12,7 +12,7 @@ class data_gongwei():
         pass
 
     def read_data(self):
-        url = "C:/Users/l.c/Desktop/tasks/graduation projection/midterm/data/data_test.txt"
+        url = "E:/2018.4.27/data7m.txt"
         skew_list = []
         kurt_list = []
         with open(url) as f:

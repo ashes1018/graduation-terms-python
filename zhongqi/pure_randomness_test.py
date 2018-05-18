@@ -12,7 +12,8 @@ from statsmodels.sandbox.stats.diagnostic import  acorr_ljungbox
 plt.rcParams['font.sans-serif']=['SimHei']
 
 def sequence_chart():
-    url = "C:/Users/l.c\Desktop/tasks/graduation projection/midterm/data/data/train_trace_2.txt"
+    url = "C:/Users/l.c\Desktop/tasks/graduation projection/midterm/data/data/test.txt"
+    # url = "D:/2018.3.31/test1.txt"
     data = []
     data_1 = []
     with open(url) as f:
@@ -21,7 +22,7 @@ def sequence_chart():
         while i < 1000:
             data = json.loads(line)['data']
             data = data[1:len(data)-1]
-            data_1.append(float(data.split(',')[0]))
+            data_1.append(float(data.split(',')[565]))
             line = f.readline()
             i += 1
 
@@ -31,6 +32,8 @@ def sequence_chart():
     plt.plot(x,y)
     plt.legend()
     plt.show()
+    print(max(data_1))
+    print(min(data_1))
     return data_1
 
 def autocorr():
@@ -61,7 +64,7 @@ def boxpierce_test():
     #
     # ax[0,1].plot(range(0,len(pval)), label="pval",)
     # ax[0,1].plot(range(0,len(pvalbp)), label="pvalbp")
-    #
+
     # ax[0,0].legend()
     # ax[0,1].legend()
     plt.show()

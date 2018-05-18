@@ -2,13 +2,17 @@ from  scipy.stats import skew,kurtosis,pearsonr
 import json
 import numpy as np
 from sklearn import svm
-import sys
-sys.path.append("C:/yulan/python workspace/graduate_terms/zhongqi/data_gongwei_kmeans.py")
+
 from sklearn import  preprocessing
 from sklearn.metrics import precision_score,recall_score,f1_score
 
 
+import sys
+sys.path.append("C:/yulan/python workspace/graduate_terms/zhongqi/data_gongwei_kmeans.py")
 from zhongqi.data_gongwei_kmeans import data_gongwei
+
+
+
 
 
 
@@ -18,8 +22,8 @@ class data_gongwei_supervised():
         pass
 
     def set_labels(self):
-        url1 = "C:/Users/l.c/Desktop/tasks/graduation projection/midterm/data/train_trace.txt"
-        url2 = "C:/Users/l.c/Desktop/tasks/graduation projection/midterm/data/train_warning.txt"
+        url1 = "E:/2018.4.27/data10000.txt"
+        url2 = "E:/2018.4.27/data8000.txt"
         train_trace_skew = []
 
         train_warning_skew = []
@@ -89,7 +93,7 @@ class data_gongwei_supervised():
         return  clf1.predict(skew_test),clf2.predict(kurt_test)
 
 
-    # 计算peason相关系数。这需要在知道测试集数据标签的前提下，或者在已经通过多个特征训练出测试集数据标签的情况下，才能进行测试集标签与单特征的相关性。
+    # 计算pearson相关系数。这需要在知道测试集数据标签的前提下，或者在已经通过多个特征训练出测试集数据标签的情况下，才能进行测试集标签与单特征的相关性。
     def cal_corr(self):
         train_trace_skew, train_warning_skew, train_trace_kurt, train_warning_kurt = data_gongwei_supervised().set_labels()
         train_skew = train_trace_skew + train_warning_skew
