@@ -22,8 +22,8 @@ class data_gongwei_supervised():
         pass
 
     def set_labels(self):
-        url1 = "E:/2018.4.27/data10000.txt"
-        url2 = "E:/2018.4.27/data8000.txt"
+        url1 = "D:/2018.4.27/data10000.txt"
+        url2 = "D:/2018.4.27/data8000.txt"
         train_trace_skew = []
 
         train_warning_skew = []
